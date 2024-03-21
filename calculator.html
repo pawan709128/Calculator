@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container" id="calculator">
+    <div class="row">
+      <div class="mydisplay" id="display"></div>
+    </div>
+    <div class="row">
+      <button onclick="myinput(this.innerText)">C</button>
+      <button onclick="myinput(this.innerText)">Del</button>
+      <button onclick="myinput(this.innerText)">%</button>
+      <button onclick="myinput(this.innerText)">/</button>
+    </div>
+    <div class="row">
+      <button onclick="myinput(this.innerText)">7</button>
+      <button onclick="myinput(this.innerText)">8</button>
+      <button onclick="myinput(this.innerText)">9</button>
+      <button onclick="myinput(this.innerText)">*</button>
+    </div>
+    <div class="row">
+      <button onclick="myinput(this.innerText)">4</button>
+      <button onclick="myinput(this.innerText)">5</button>
+      <button onclick="myinput(this.innerText)">6</button>
+      <button onclick="myinput(this.innerText)">-</button>
+    </div>
+    <div class="row">
+      <button onclick="myinput(this.innerText)">1</button>
+      <button onclick="myinput(this.innerText)">2</button>
+      <button onclick="myinput(this.innerText)">3</button>
+      <button onclick="myinput(this.innerText)">+</button>
+    </div>
+    <div class="row">
+      <button onclick="myinput(this.innerText)">0</button>
+      <button onclick="myinput(this.innerText)">00</button>
+      <button onclick="myinput(this.innerText)">.</button>
+      <button onclick="calculate()">=</button>
+    </div>
+  </div>
+
+  <script>
+    function calculate() {
+      var result = document.getElementById('display').innerText;
+      document.getElementById('display').innerText = eval(result);
+    }
+    
+    function myinput(num1) {
+      var result = document.getElementById('display').innerText;
+      if (num1 == 'Del') {
+        document.getElementById('display').innerText = result.slice(0, -1);
+      } 
+      else if (num1 == 'C') {
+        document.getElementById('display').innerText = "";
+      }
+      else {
+        document.getElementById('display').innerText = result + num1;
+      }
+    }
+  </script>
+  
+  
+</body>
+</html>
